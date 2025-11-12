@@ -22,6 +22,7 @@ export default defineConfig({
   
   // Optimisations
   build: {
+    minify: 'esbuild',
     // Taille de chunk optimisée
     chunkSizeWarningLimit: 1000,
     
