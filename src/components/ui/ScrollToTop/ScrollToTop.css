@@ -1,0 +1,104 @@
+/* ========================================
+   SCROLL TO TOP - ULTRA PREMIUM
+   ======================================== */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  z-index: var(--z-tooltip);
+  width: 60px;
+  height: 60px;
+  background: var(--blanc-pur);
+  border: 3px solid var(--noir-profond);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-xl);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-to-top:hover {
+  transform: scale(1.1) translateY(-4px);
+  box-shadow: var(--shadow-2xl);
+  background: var(--vert-principal);
+  border-color: var(--noir-profond);
+}
+
+.scroll-to-top:active {
+  transform: scale(1.05);
+}
+
+/* Arrow Icon */
+.scroll-arrow {
+  width: 24px;
+  height: 24px;
+  color: var(--noir-profond);
+  position: absolute;
+  animation: arrowBounce 2s ease-in-out infinite;
+}
+
+@keyframes arrowBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Progress Circle */
+.scroll-progress-circle {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  transform: rotate(-90deg);
+}
+
+.scroll-progress-bg {
+  fill: none;
+  stroke: var(--gris-border);
+  stroke-width: 4;
+}
+
+.scroll-progress-bar {
+  fill: none;
+  stroke: var(--vert-principal);
+  stroke-width: 4;
+  stroke-dasharray: 289;
+  stroke-dashoffset: 289;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 24px;
+    left: 24px;
+    width: 52px;
+    height: 52px;
+  }
+  
+  .scroll-arrow {
+    width: 20px;
+    height: 20px;
+  }
+}

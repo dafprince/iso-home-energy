@@ -1,0 +1,85 @@
+/* ========================================
+   REVEAL ON SCROLL - ULTRA PREMIUM
+   ======================================== */
+
+.reveal {
+  opacity: 0;
+  transition: all var(--reveal-duration, 0.8s) cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+}
+
+/* Fade Up */
+.reveal-fade-up {
+  transform: translateY(40px);
+}
+
+.reveal-fade-up.is-visible {
+  transform: translateY(0);
+}
+
+/* Fade Down */
+.reveal-fade-down {
+  transform: translateY(-40px);
+}
+
+.reveal-fade-down.is-visible {
+  transform: translateY(0);
+}
+
+/* Fade Left */
+.reveal-fade-left {
+  transform: translateX(-40px);
+}
+
+.reveal-fade-left.is-visible {
+  transform: translateX(0);
+}
+
+/* Fade Right */
+.reveal-fade-right {
+  transform: translateX(40px);
+}
+
+.reveal-fade-right.is-visible {
+  transform: translateX(0);
+}
+
+/* Scale In */
+.reveal-scale {
+  transform: scale(0.9);
+}
+
+.reveal-scale.is-visible {
+  transform: scale(1);
+}
+
+/* Zoom Out */
+.reveal-zoom {
+  transform: scale(1.1);
+}
+
+.reveal-zoom.is-visible {
+  transform: scale(1);
+}
+
+/* Rotate */
+.reveal-rotate {
+  transform: rotate(-5deg);
+}
+
+.reveal-rotate.is-visible {
+  transform: rotate(0);
+}
+
+/* Flip */
+.reveal-flip {
+  transform: perspective(1000px) rotateY(20deg);
+}
+
+.reveal-flip.is-visible {
+  transform: perspective(1000px) rotateY(0);
+}

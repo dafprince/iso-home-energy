@@ -1,0 +1,76 @@
+/* ========================================
+   TEXTAREA STYLES - ULTRA PREMIUM
+   ======================================== */
+
+.textarea-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  width: 100%;
+}
+
+.textarea-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.textarea-label {
+  font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--noir-profond);
+}
+
+.textarea-required {
+  color: var(--error);
+}
+
+.textarea-counter {
+  font-size: 12px;
+  color: var(--gris-moyen);
+  font-weight: var(--font-weight-medium);
+}
+
+.textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-family: var(--font-body);
+  color: var(--noir-profond);
+  background: var(--blanc-pur);
+  border: 2px solid var(--gris-border);
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
+  outline: none;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.textarea:focus {
+  border-color: var(--vert-principal);
+  box-shadow: 0 0 0 3px rgba(141, 198, 63, 0.1);
+}
+
+.textarea:disabled {
+  background: var(--gris-clair);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.textarea-error {
+  border-color: var(--error);
+}
+
+.textarea-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.textarea-error-message {
+  font-size: 13px;
+  color: var(--error);
+  font-weight: var(--font-weight-medium);
+}
+
+.textarea::placeholder {
+  color: var(--gris-moyen);
+}

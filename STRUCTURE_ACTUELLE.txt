@@ -1,0 +1,16 @@
+.
+./node_modules
+./public
+./public/{images
+./public/{images/{logo,hero,services,realisations,certifications},fonts}
+./src
+./src/assets
+./src/{components
+./src/{components/{common
+./src/{components/{common/{Button,Card,Input,Textarea,Select,Radio,Checkbox,Badge,Tag,Loader},layout
+./src/{components/{common/{Button,Card,Input,Textarea,Select,Radio,Checkbox,Badge,Tag,Loader},layout/{Header,Footer,Layout},sections
+./src/{components/{common/{Button,Card,Input,Textarea,Select,Radio,Checkbox,Badge,Tag,Loader},layout/{Header,Footer,Layout},sections/{Hero,Services,Process,Stats,EligibilityBanner,Testimonials,FAQ,Certifications},forms
+./src/{components/{common/{Button,Card,Input,Textarea,Select,Radio,Checkbox,Badge,Tag,Loader},layout/{Header,Footer,Layout},sections/{Hero,Services,Process,Stats,EligibilityBanner,Testimonials,FAQ,Certifications},forms/{ContactForm,EligibilityForm},ui
+./src/{components/{common/{Button,Card,Input,Textarea,Select,Radio,Checkbox,Badge,Tag,Loader},layout/{Header,Footer,Layout},sections/{Hero,Services,Process,Stats,EligibilityBanner,Testimonials,FAQ,Certifications},forms/{ContactForm,EligibilityForm},ui/{WhatsAppButton,ScrollToTop,Modal,Tooltip},animations},pages
+./src/{components/{common/{Button,Card,Input,Textarea,Select,Radio,Checkbox,Badge,Tag,Loader},layout/{Header,Footer,Layout},sections/{Hero,Services,Process,Stats,EligibilityBanner,Testimonials,FAQ,Certifications},forms/{ContactForm,EligibilityForm},ui/{WhatsAppButton,ScrollToTop,Modal,Tooltip},animations},pages/{Home,Eligibilite,Services,APropos,Realisations,Aides,Contact,NotFound},styles,hooks,utils,data,context,assets
+./src/{components/{common/{Button,Card,Input,Textarea,Select,Radio,Checkbox,Badge,Tag,Loader},layout/{Header,Footer,Layout},sections/{Hero,Services,Process,Stats,EligibilityBanner,Testimonials,FAQ,Certifications},forms/{ContactForm,EligibilityForm},ui/{WhatsAppButton,ScrollToTop,Modal,Tooltip},animations},pages/{Home,Eligibilite,Services,APropos,Realisations,Aides,Contact,NotFound},styles,hooks,utils,data,context,assets/{icons,animations}}

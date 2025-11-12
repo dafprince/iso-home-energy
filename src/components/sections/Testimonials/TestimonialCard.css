@@ -1,0 +1,99 @@
+/* ========================================
+   TESTIMONIAL CARD STYLES
+   ======================================== */
+
+.testimonial-card {
+  background: var(--blanc-pur);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-xl);
+  border-left: 4px solid var(--vert-principal);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-card);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Header */
+.testimonial-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.testimonial-card-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid var(--vert-principal);
+  object-fit: cover;
+}
+
+.testimonial-card-info {
+  flex: 1;
+}
+
+.testimonial-card-name {
+  font-size: var(--font-size-h5);
+  font-weight: var(--font-weight-bold);
+  color: var(--noir-profond);
+  margin-bottom: 4px;
+}
+
+.testimonial-card-location {
+  font-size: var(--font-size-small);
+  color: var(--gris-moyen);
+  margin: 0;
+}
+
+/* Meta */
+.testimonial-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+}
+
+.testimonial-card-stars {
+  font-size: 18px;
+}
+
+.testimonial-card-service {
+  padding: 4px 12px;
+  background: var(--vert-principal);
+  color: var(--noir-profond);
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+}
+
+/* Comment */
+.testimonial-card-comment {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-relaxed);
+  color: var(--gris-fonce);
+  font-style: italic;
+  margin-bottom: var(--spacing-md);
+  flex: 1;
+}
+
+/* Date */
+.testimonial-card-date {
+  font-size: var(--font-size-small);
+  color: var(--gris-moyen);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: var(--spacing-lg);
+  }
+}

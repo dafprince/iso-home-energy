@@ -1,0 +1,43 @@
+{
+  "name": "ISO HOME ENERGY - Rénovation Énergétique",
+  "short_name": "ISO HOME",
+  "description": "Expert en rénovation énergétique et économies d'énergie. Isolation, façade, pompe à chaleur, menuiserie.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#8DC63F",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": [
+    "business",
+    "utilities"
+  ],
+  "lang": "fr",
+  "dir": "ltr"
+}

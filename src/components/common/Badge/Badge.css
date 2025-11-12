@@ -1,0 +1,57 @@
+/* ========================================
+   BADGE STYLES
+   ======================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+/* Variantes */
+.badge-primary {
+  background: var(--vert-principal);
+  color: var(--noir-profond);
+}
+
+.badge-secondary {
+  background: var(--noir-profond);
+  color: var(--vert-principal);
+}
+
+.badge-success {
+  background: var(--success);
+  color: var(--blanc-pur);
+}
+
+.badge-warning {
+  background: var(--warning);
+  color: var(--noir-profond);
+}
+
+.badge-error {
+  background: var(--error);
+  color: var(--blanc-pur);
+}
+
+/* Tailles */
+.badge-small {
+  padding: 4px 10px;
+  font-size: 10px;
+}
+
+.badge-medium {
+  padding: 6px 14px;
+  font-size: 12px;
+}
+
+.badge-large {
+  padding: 8px 18px;
+  font-size: 14px;
+}

@@ -1,0 +1,56 @@
+/* ========================================
+   INDEX CSS - ULTRA PREMIUM
+   Point d'entrée de tous les styles
+   ======================================== */
+
+/* Reset */
+@import './reset.css';
+
+/* Variables */
+@import './variables.css';
+
+/* Typography */
+@import './typography.css';
+
+/* Animations */
+@import './animations.css';
+
+/* Utilities */
+@import './utilities.css';
+
+/* Responsive (si besoin) */
+/* @import './responsive.css'; */
+
+/* Global Styles Premium */
+body {
+  background: var(--blanc-pur);
+  overflow-x: hidden;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+  background: var(--vert-principal);
+  color: var(--noir-profond);
+}
+
+::-moz-selection {
+  background: var(--vert-principal);
+  color: var(--noir-profond);
+}
+
+/* Focus Outline Premium */
+*:focus-visible {
+  outline: 3px solid var(--vert-principal);
+  outline-offset: 3px;
+  border-radius: var(--radius-md);
+}
+
+/* Disable outline for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}

@@ -1,0 +1,147 @@
+/* ========================================
+   BUTTON STYLES - ISO HOME ENERGY
+   ======================================== */
+
+.btn {
+  /* Reset */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  
+  /* Style de base */
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: var(--transition-button);
+  white-space: nowrap;
+  
+  /* Accessibilité */
+  outline: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--vert-principal);
+  outline-offset: 2px;
+}
+
+/* ========== VARIANTES ========== */
+
+/* Primary */
+.btn-primary {
+  background: var(--gradient-principal);
+  color: var(--noir-profond);
+  box-shadow: var(--shadow-button);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--gradient-hover);
+  box-shadow: var(--shadow-button-hover);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Secondary */
+.btn-secondary {
+  background: var(--noir-profond);
+  color: var(--vert-principal);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--gris-fonce);
+  transform: translateY(-2px);
+}
+
+/* Outline */
+.btn-outline {
+  background: transparent;
+  color: var(--vert-principal);
+  border: 2px solid var(--vert-principal);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: var(--vert-principal);
+  color: var(--noir-profond);
+  transform: translateY(-2px);
+}
+
+/* Ghost */
+.btn-ghost {
+  background: transparent;
+  color: var(--noir-profond);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: var(--gris-clair);
+}
+
+/* ========== TAILLES ========== */
+
+.btn-small {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: var(--radius-md);
+}
+
+.btn-medium {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+.btn-large {
+  padding: 16px 32px;
+  font-size: 18px;
+}
+
+/* ========== ÉTATS ========== */
+
+.btn-full-width {
+  width: 100%;
+}
+
+.btn-disabled,
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn-loading {
+  cursor: wait;
+  pointer-events: none;
+}
+
+/* Spinner de chargement */
+.btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .btn-large {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+  
+  .btn-medium {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+}

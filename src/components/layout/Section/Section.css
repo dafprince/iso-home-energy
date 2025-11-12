@@ -1,0 +1,52 @@
+/* ========================================
+   SECTION - ULTRA PREMIUM
+   ======================================== */
+
+.section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-white {
+  background: var(--blanc-pur);
+}
+
+.section-gray {
+  background: var(--gris-clair);
+}
+
+.section-green {
+  background: var(--gradient-principal);
+}
+
+.section-black {
+  background: var(--noir-profond);
+  color: var(--blanc-pur);
+}
+
+.section-small {
+  padding: var(--spacing-16) 0;
+}
+
+.section-medium {
+  padding: var(--spacing-20) 0;
+}
+
+.section-large {
+  padding: var(--spacing-24) 0;
+}
+
+@media (max-width: 768px) {
+  .section-small {
+    padding: var(--spacing-8) 0;
+  }
+  
+  .section-medium {
+    padding: var(--spacing-10) 0;
+  }
+  
+  .section-large {
+    padding: var(--spacing-12) 0;
+  }
+}

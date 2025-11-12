@@ -1,0 +1,159 @@
+/* ========================================
+   SERVICE PAGE STYLES
+   ======================================== */
+
+.service-page {
+  min-height: 100vh;
+}
+
+/* Hero */
+.service-hero {
+  text-align: center;
+  color: var(--noir-profond);
+}
+
+.service-hero h1 {
+  font-size: var(--font-size-h1);
+  margin: var(--spacing-lg) 0;
+}
+
+.service-hero p {
+  font-size: var(--font-size-body-large);
+  max-width: 700px;
+  margin: 0 auto var(--spacing-2xl);
+}
+
+.service-hero-actions {
+  display: flex;
+  gap: var(--spacing-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Advantages */
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.advantage-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--gris-clair);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--vert-principal);
+}
+
+.advantage-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--vert-principal);
+  color: var(--noir-profond);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+  flex-shrink: 0;
+}
+
+.advantage-card p {
+  font-size: var(--font-size-body);
+  color: var(--gris-fonce);
+  margin: 0;
+}
+
+/* Types */
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.type-card {
+  padding: var(--spacing-xl);
+  background: var(--blanc-pur);
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--noir-profond);
+  box-shadow: var(--shadow-md);
+}
+
+.type-card h3 {
+  font-size: var(--font-size-h4);
+  color: var(--vert-principal);
+  margin-bottom: var(--spacing-md);
+}
+
+.type-card p {
+  color: var(--gris-fonce);
+  margin: 0;
+}
+
+/* Info Cards */
+.service-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.service-info-card {
+  padding: var(--spacing-2xl);
+  background: var(--gris-clair);
+  border-radius: var(--radius-xl);
+  text-align: center;
+}
+
+.service-info-card h3 {
+  font-size: var(--font-size-h4);
+  margin-bottom: var(--spacing-md);
+}
+
+.service-info-card p {
+  font-size: var(--font-size-body-large);
+  font-weight: var(--font-weight-semibold);
+  color: var(--gris-fonce);
+  margin: 0;
+}
+
+.aides-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  margin-top: var(--spacing-md);
+}
+
+/* CTA */
+.service-cta {
+  text-align: center;
+  color: var(--noir-profond);
+}
+
+.service-cta h2 {
+  font-size: var(--font-size-h3);
+  margin-bottom: var(--spacing-md);
+}
+
+.service-cta p {
+  font-size: var(--font-size-body);
+  margin-bottom: var(--spacing-xl);
+}
+
+.service-cta-actions {
+  display: flex;
+  gap: var(--spacing-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .advantages-grid,
+  .types-grid,
+  .service-info-grid {
+    grid-template-columns: 1fr;
+  }
+}

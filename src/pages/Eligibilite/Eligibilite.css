@@ -1,0 +1,463 @@
+/* ========================================
+   ELIGIBILITE PAGE - ULTRA PREMIUM DESIGN
+   ======================================== */
+
+.eligibilite-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+}
+
+/* ========== HERO ========== */
+.eligibilite-hero {
+  text-align: center;
+  color: var(--noir-profond);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.eligibilite-hero h1 {
+  font-size: clamp(40px, 6vw, 64px);
+  margin: var(--spacing-6) 0;
+  line-height: 1.1;
+  font-weight: var(--font-weight-black);
+}
+
+.eligibilite-hero p {
+  font-size: clamp(18px, 2.5vw, 24px);
+  color: var(--noir-profond);
+  opacity: 0.9;
+}
+
+/* ========== FORMULAIRE WRAPPER ========== */
+.eligibilite-form-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--blanc-pur);
+  border-radius: var(--radius-3xl);
+  border: 4px solid var(--noir-profond);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.08);
+  padding: var(--spacing-10);
+  position: relative;
+  overflow: hidden;
+}
+
+.eligibilite-form-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(90deg, 
+    var(--vert-principal) 0%, 
+    var(--vert-hover) 50%, 
+    var(--vert-principal) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ========== PROGRESS BAR ========== */
+.eligibilite-progress {
+  margin-bottom: var(--spacing-10);
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 20px;
+}
+
+.progress-steps::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 60px;
+  right: 60px;
+  height: 4px;
+  background: var(--gris-clair);
+  z-index: 0;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3);
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--gris-moyen);
+  transition: all 0.3s ease;
+}
+
+.progress-step span {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--blanc-pur);
+  border: 4px solid var(--gris-clair);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: var(--font-weight-bold);
+  transition: all 0.3s ease;
+}
+
+.progress-step.active {
+  color: var(--vert-principal);
+}
+
+.progress-step.active span {
+  background: var(--vert-principal);
+  border-color: var(--vert-principal);
+  color: var(--blanc-pur);
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(141, 198, 63, 0.4);
+}
+
+/* ========== FORM STEP ========== */
+.form-step {
+  animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-step h2 {
+  font-size: clamp(28px, 4vw, 36px);
+  margin-bottom: var(--spacing-8);
+  color: var(--noir-profond);
+  text-align: center;
+  font-weight: var(--font-weight-black);
+}
+
+/* ========== FORM ROWS ========== */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-6);
+}
+
+/* ========== SERVICES CHECKBOXES ========== */
+.services-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-4);
+}
+
+.service-checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-5);
+  background: var(--blanc-pur);
+  border: 3px solid var(--gris-border);
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: var(--font-weight-semibold);
+  font-size: 16px;
+}
+
+.service-checkbox:hover {
+  border-color: var(--vert-principal);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-checkbox.selected {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-color: var(--vert-principal);
+  border-width: 4px;
+  box-shadow: 0 8px 20px rgba(141, 198, 63, 0.2);
+}
+
+.service-checkbox input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  accent-color: var(--vert-principal);
+}
+
+.service-checkbox span {
+  font-size: 16px;
+}
+
+/* ========== FORM ACTIONS ========== */
+.form-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-8);
+}
+
+/* ========== RÉSULTATS ========== */
+.eligibilite-results {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeInScale 0.6s ease;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.eligibilite-results h1 {
+  font-size: clamp(40px, 6vw, 56px);
+  margin: var(--spacing-6) 0;
+  font-weight: var(--font-weight-black);
+}
+
+.eligibilite-results > p {
+  font-size: clamp(18px, 2.5vw, 22px);
+  color: var(--gris-fonce);
+  margin-bottom: var(--spacing-10);
+}
+
+/* ========== RESULTS GRID ========== */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-6);
+  margin: var(--spacing-10) 0;
+}
+
+.result-card {
+  background: var(--blanc-pur);
+  padding: var(--spacing-8);
+  border-radius: var(--radius-2xl);
+  border: 4px solid var(--noir-profond);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.result-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--vert-principal);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: var(--vert-principal);
+}
+
+.result-card:hover::before {
+  transform: scaleX(1);
+}
+
+.result-card-icon {
+  font-size: 48px;
+  margin-bottom: var(--spacing-4);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.result-card-label {
+  font-size: 16px;
+  color: var(--gris-fonce);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-3);
+}
+
+.result-card-value {
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: var(--font-weight-black);
+  color: var(--vert-principal);
+  line-height: 1.2;
+}
+
+.result-card-total {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, 
+    var(--vert-principal) 0%, 
+    var(--vert-hover) 100%);
+  border-color: var(--noir-profond);
+  color: var(--blanc-pur);
+  padding: var(--spacing-10);
+  box-shadow: 
+    0 20px 60px rgba(141, 198, 63, 0.4),
+    0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.result-card-total .result-card-label {
+  color: var(--blanc-pur);
+  opacity: 0.95;
+  font-size: 18px;
+}
+
+.result-card-total .result-card-value {
+  color: var(--blanc-pur);
+  font-size: clamp(40px, 6vw, 56px);
+}
+
+.result-card-total .result-card-icon {
+  font-size: 64px;
+}
+
+/* ========== FINANCING ========== */
+.results-financing {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  padding: var(--spacing-8);
+  border-radius: var(--radius-2xl);
+  border: 4px solid var(--vert-principal);
+  margin: var(--spacing-8) 0;
+}
+
+.results-financing p {
+  font-size: 18px;
+  color: var(--gris-fonce);
+  margin-bottom: var(--spacing-2);
+  font-weight: var(--font-weight-semibold);
+}
+
+.results-financing h2 {
+  font-size: clamp(48px, 8vw, 72px);
+  color: var(--vert-principal);
+  font-weight: var(--font-weight-black);
+  margin: 0;
+}
+
+/* ========== MESSAGES ========== */
+.results-message {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+  padding: var(--spacing-8);
+  border-radius: var(--radius-2xl);
+  border: 3px solid var(--vert-principal);
+  margin: var(--spacing-8) 0;
+  text-align: center;
+}
+
+.results-message p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--gris-fonce);
+  margin: var(--spacing-2) 0;
+}
+
+.results-message p:first-child {
+  font-size: 20px;
+  font-weight: var(--font-weight-bold);
+  color: var(--vert-principal);
+}
+
+/* ========== ACTIONS ========== */
+.results-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-10);
+}
+
+.results-actions a {
+  text-decoration: none;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .eligibilite-form-wrapper {
+    padding: var(--spacing-6);
+    border-radius: var(--radius-2xl);
+  }
+
+  .progress-steps {
+    padding: 0 10px;
+  }
+
+  .progress-steps::before {
+    left: 40px;
+    right: 40px;
+  }
+
+  .progress-step {
+    font-size: 12px;
+  }
+
+  .progress-step span {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .services-checkboxes {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .results-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.result-card-total {
+  animation: pulse 2s infinite;
+}

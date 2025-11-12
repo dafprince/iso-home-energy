@@ -1,0 +1,126 @@
+/* ========================================
+   INDEX CSS - ISO HOME ENERGY
+   Point d'entrée principal des styles
+   ======================================== */
+
+/* Import des styles dans l'ordre optimal */
+
+/* 1. Reset - Réinitialiser les styles par défaut */
+@import './styles/reset.css';
+
+/* 2. Variables - Définir toutes les variables CSS */
+@import './styles/variables.css';
+
+/* 3. Typography - Styles typographiques */
+@import './styles/typography.css';
+
+/* 4. Animations - Keyframes et animations */
+@import './styles/animations.css';
+
+/* 5. Utilities - Classes utilitaires */
+@import './styles/utilities.css';
+
+/* 6. Responsive - Media queries globales */
+@import './styles/responsive.css';
+
+/* ========================================
+   STYLES GLOBAUX ADDITIONNELS
+   ======================================== */
+
+/* Root element */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Smooth scroll pour toute la page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sélection de texte personnalisée */
+::selection {
+  background-color: var(--vert-principal);
+  color: var(--noir-profond);
+}
+
+::-moz-selection {
+  background-color: var(--vert-principal);
+  color: var(--noir-profond);
+}
+
+/* Scrollbar personnalisée (Webkit) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gris-clair);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vert-principal);
+  border-radius: var(--radius-md);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vert-fonce);
+}
+
+/* Focus visible pour l'accessibilité */
+*:focus-visible {
+  outline: 2px solid var(--vert-principal);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Skip to main content (accessibilité) */
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 999;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--noir-profond);
+  color: var(--vert-principal);
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+}
+
+.skip-to-main:focus {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Loading state */
+.loading {
+  cursor: wait;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Disabled state */
+.disabled,
+[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Error state */
+.error-state {
+  color: var(--error);
+  border-color: var(--error) !important;
+}
+
+/* Success state */
+.success-state {
+  color: var(--success);
+  border-color: var(--success) !important;
+}
+
+/* ========================================
+   FIN DES STYLES GLOBAUX
+   ======================================== */

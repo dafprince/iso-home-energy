@@ -1,0 +1,227 @@
+/* ========================================
+   RESPONSIVE - ISO HOME ENERGY
+   Media queries et styles responsive globaux
+   ======================================== */
+
+/* ========== BREAKPOINTS ========== */
+/*
+  Mobile  : 0 - 640px
+  Tablet  : 641px - 1024px
+  Desktop : 1025px - 1440px
+  Large   : 1441px+
+*/
+
+/* ========== LARGE DESKTOP (1441px+) ========== */
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+
+/* ========== DESKTOP (1025px - 1440px) ========== */
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  /* Desktop standard, styles par défaut */
+}
+
+/* ========== TABLET (641px - 1024px) ========== */
+
+@media (max-width: 1024px) {
+  /* Container */
+  .container {
+    padding: 0 20px;
+  }
+  
+  /* Sections */
+  .section {
+    padding: var(--spacing-3xl) 0;
+  }
+  
+  /* Grid */
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========== MOBILE (0 - 768px) ========== */
+
+@media (max-width: 768px) {
+  /* Container */
+  .container {
+    padding: 0 16px;
+  }
+  
+  /* Sections */
+  .section {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  .section-sm {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .section-lg {
+    padding: var(--spacing-3xl) 0;
+  }
+  
+  /* Typography */
+  h1, h2, h3, h4, h5 {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  p {
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  /* Grid - Toutes les grilles passent en 1 colonne */
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4,
+  .grid-cols-6 {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Flex - Beaucoup de flex row deviennent flex column */
+  .flex-row-mobile-col {
+    flex-direction: column;
+  }
+  
+  /* Spacing mobile */
+  .mt-mobile-sm { margin-top: var(--spacing-sm); }
+  .mb-mobile-sm { margin-bottom: var(--spacing-sm); }
+  .mt-mobile-md { margin-top: var(--spacing-md); }
+  .mb-mobile-md { margin-bottom: var(--spacing-md); }
+  
+  /* Text alignment */
+  .text-center-mobile {
+    text-align: center;
+  }
+  
+  /* Hide/Show */
+  .hide-mobile {
+    display: none !important;
+  }
+  
+  .show-mobile {
+    display: block !important;
+  }
+}
+
+/* ========== SMALL MOBILE (0 - 640px) ========== */
+
+@media (max-width: 640px) {
+  /* Container encore plus réduit */
+  .container {
+    padding: 0 12px;
+  }
+  
+  /* Typography très petite */
+  .hero-title {
+    font-size: 32px;
+  }
+  
+  /* Buttons full width */
+  .btn-full-mobile {
+    width: 100%;
+  }
+}
+
+/* ========== TOUCH DEVICES ========== */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Augmenter la zone de clic pour le touch */
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Désactiver certains hover effects sur touch */
+  .hover-lift:hover {
+    transform: none;
+  }
+  
+  /* Remplacer hover par active sur touch */
+  .hover-lift:active {
+    transform: translateY(-2px);
+  }
+}
+
+/* ========== LANDSCAPE MODE (Mobile) ========== */
+
+@media (max-width: 768px) and (orientation: landscape) {
+  /* Réduire padding vertical en mode paysage */
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+}
+
+/* ========== HIGH DPI SCREENS (Retina) ========== */
+
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+  /* Images et icons en haute résolution */
+  /* (géré automatiquement avec SVG et WebP) */
+}
+
+/* ========== PRINT STYLES ========== */
+
+@media print {
+  /* Cacher les éléments non nécessaires à l'impression */
+  header,
+  footer,
+  .no-print,
+  button,
+  .whatsapp-button {
+    display: none !important;
+  }
+  
+  /* Optimiser pour l'impression */
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+  
+  /* Éviter les sauts de page au milieu d'un élément */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+  
+  img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+}
+
+/* ========== DARK MODE (Future feature) ========== */
+
+@media (prefers-color-scheme: dark) {
+  /* Pour l'instant, on force le mode clair */
+  /* À implémenter plus tard si nécessaire */
+}
+
+/* ========== REDUCED MOTION ========== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
