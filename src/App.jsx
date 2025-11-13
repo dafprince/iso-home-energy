@@ -26,7 +26,9 @@ function App() {
           <Route path="/aides" element={<Aides />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/eligibilite" element={<Eligibilite />} />
-          <Route path="/services/:slug" element={<ServicePage />} />
+         
+      <Route path="/services/:slug" element={<ServicePage />} />
+<Route path="/services" element={<ServicePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

@@ -1,28 +1,46 @@
-/* ========================================
-   SERVICE PAGE - ISO HOME ENERGY
-   Template pour toutes les pages services
-   ======================================== */
-
 import { useEffect } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
-import { 
-  Button, 
+import {
+  Button,
   Badge,
   Section,
-  Container 
+  Container
 } from '../../components';
-import { getServiceBySlug } from '../../data/services';
+import { getServiceBySlug, servicesData } from '../../data/services';
+
 import { CONTACT } from '../../utils/constants';
 import './ServicePage.css';
+import ServiceCard from '../../components/sections/Services/ServiceCard';
 
 const ServicePage = () => {
   const { slug } = useParams();
-  const service = getServiceBySlug(slug);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
 
+  if (!slug) {
+    // Pas de slug : afficher la liste complète des services (version premium)
+    return (
+      <Section padding="large" background="white">
+        <Container>
+          <Badge variant="primary" style={{ marginBottom: 16 }}>Nos Services</Badge>
+          <h1 className="section-title-premium">Des solutions pour votre rénovation</h1>
+          <p className="section-subtitle-premium mb-40">
+            Découvrez notre expertise dans chacun de nos services pour maximiser votre confort et vos économies.
+          </p>
+          <div className="services-grid-premium">
+            {servicesData.map(service => (
+              <ServiceCard key={service.id} service={service} premium />
+            ))}
+          </div>
+        </Container>
+      </Section>
+    );
+  }
+
+  // Avec slug : afficher une page service individuelle
+  const service = getServiceBySlug(slug);
   if (!service) {
     return <Navigate to="/404" replace />;
   }
@@ -30,8 +48,8 @@ const ServicePage = () => {
   return (
     <div className="service-page">
       {/* HERO */}
-      <Section 
-        background="green" 
+      <Section
+        background="green"
         padding="large"
         style={{
           backgroundImage: `linear-gradient(rgba(141, 198, 63, 0.9), rgba(141, 198, 63, 0.9)), url(${service.image})`,
