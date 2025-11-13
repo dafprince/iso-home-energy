@@ -8,7 +8,7 @@ import { COMMON_TEXTS, CONTACT } from '../../../utils/constants';
 import { useApp } from '../../../context/AppContext';
 import Navigation from './Navigation';
 import MobileMenu from './MobileMenu';
-import logo from '../../../assets/images/logo1.png';
+import logo from '../../../assets/images/logo2.png';
 import './Header.css';
 
 const Header = () => {

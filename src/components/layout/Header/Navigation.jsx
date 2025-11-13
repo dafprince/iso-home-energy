@@ -1,9 +1,10 @@
 /* ========================================
-   NAVIGATION - ULTRA PREMIUM V2
+   NAVIGATION - AVEC 6 SERVICES
    ======================================== */
 
 import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { servicesData } from '../../../data/services';
 import './Navigation.css';
 
 const Navigation = () => {
@@ -41,37 +42,6 @@ const Navigation = () => {
     }, 200);
   };
 
-  const services = [
-    {
-      id: 1,
-      title: 'Isolation Thermique',
-      slug: 'isolation-thermique',
-      icon: '🏠',
-      description: 'Isolation complète et performante'
-    },
-    {
-      id: 2,
-      title: 'Isolation Extérieure',
-      slug: 'isolation-exterieur',
-      icon: '🏗️',
-      description: 'ITE pour façades modernes'
-    },
-    {
-      id: 3,
-      title: 'Pompe à Chaleur',
-      slug: 'pompe-chaleur',
-      icon: '♨️',
-      description: 'Chauffage écologique'
-    },
-    {
-      id: 4,
-      title: 'Ravalement Façade',
-      slug: 'ravalement-facade',
-      icon: '🎨',
-      description: 'Rénovation complète'
-    }
-  ];
-
   return (
     <nav className="navigation">
       <Link 
@@ -98,7 +68,7 @@ const Navigation = () => {
         {isServicesOpen && (
           <div className="nav-dropdown-menu">
             <div className="nav-dropdown-content">
-              {services.map((service) => (
+              {servicesData.map((service) => (
                 <Link
                   key={service.id}
                   to={`/services/${service.slug}`}
@@ -107,8 +77,8 @@ const Navigation = () => {
                 >
                   <span className="nav-dropdown-icon">{service.icon}</span>
                   <div className="nav-dropdown-text">
-                    <div className="nav-dropdown-name">{service.title}</div>
-                    <div className="nav-dropdown-desc">{service.description}</div>
+                    <div className="nav-dropdown-name">{service.name}</div>
+                    <div className="nav-dropdown-desc">{service.shortDescription}</div>
                   </div>
                 </Link>
               ))}

@@ -1,5 +1,5 @@
 /* ========================================
-   NAVIGATION - ULTRA PREMIUM ÉLÉGANTE
+   NAVIGATION - STYLE ORIGINAL AMÉLIORÉ
    ======================================== */
 
 .navigation {
@@ -23,7 +23,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.25s ease;
   white-space: nowrap;
 }
 
@@ -37,7 +37,7 @@
   height: 2px;
   background: var(--vert-principal);
   border-radius: 2px;
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.25s ease;
 }
 
 .nav-link:hover {
@@ -55,12 +55,11 @@
 
 .nav-link.active::after {
   transform: translateX(-50%) scaleX(1);
-  background: var(--vert-principal);
 }
 
 .nav-arrow {
   font-size: 8px;
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.25s ease;
   display: inline-block;
   margin-left: 2px;
 }
@@ -79,7 +78,7 @@
   top: calc(100% + 12px);
   left: 50%;
   transform: translateX(-50%);
-  min-width: 640px;
+  min-width: 680px;
   background: var(--blanc-pur);
   border: 3px solid var(--noir-profond);
   border-radius: var(--radius-2xl);
@@ -87,7 +86,7 @@
     0 16px 48px rgba(0, 0, 0, 0.12),
     0 8px 24px rgba(0, 0, 0, 0.08);
   padding: var(--spacing-4);
-  animation: dropdownSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: dropdownSlideIn 0.3s ease;
   z-index: 1000;
 }
 
@@ -130,7 +129,7 @@
   padding: var(--spacing-3);
   border-radius: var(--radius-lg);
   text-decoration: none;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.25s ease;
   border: 2px solid transparent;
   background: var(--blanc-pur);
 }
@@ -203,7 +202,7 @@
 
 @media (min-width: 1025px) and (max-width: 1280px) {
   .nav-dropdown-menu {
-    min-width: 560px;
+    min-width: 600px;
   }
   
   .nav-link,
