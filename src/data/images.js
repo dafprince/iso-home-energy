@@ -27,7 +27,7 @@ export const HERO = {
 
 export const SERVICES_IMAGES = {
   isolation: {
-    main: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80',
+    main: 'https://media.castorama.fr/is/image/KingfisherDigital/e09324e71a7129bb9b1fdd0ab54089bd6bd3c227?$WCMS_NPI_FW_M$',
     thumb: 'https://media.castorama.fr/is/image/KingfisherDigital/e09324e71a7129bb9b1fdd0ab54089bd6bd3c227?$WCMS_NPI_FW_M$',
     alt: 'Isolation thermique maison'
   },
@@ -45,7 +45,7 @@ export const SERVICES_IMAGES = {
   },
   
   menuiserie: {
-    main: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80',
+    main: 'https://www.mcfrenovation.com/wp-content/uploads/2022/12/PRIX-POUR-SERVICE-MENUISERIE-700x466.jpg',
     thumb: 'https://www.mcfrenovation.com/wp-content/uploads/2022/12/PRIX-POUR-SERVICE-MENUISERIE-700x466.jpg',
     alt: 'Fenêtres et menuiserie'
   },
@@ -57,7 +57,7 @@ export const SERVICES_IMAGES = {
   },
   
   peinture: {
-    main: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&q=80',
+    main: 'https://lh3.googleusercontent.com/proxy/T5iIhJ84PPLeeW9kxUDQIpUwx-V4JKKJGN8-l4Th4-40bdfVEXpd168gbCAiidYq6YSmlg2POM7umrCAtfcuvcGaoWbIfWOy_9IbYL8cZqJJW2g_BvfVKOGObCM',
     thumb: 'https://lh3.googleusercontent.com/proxy/T5iIhJ84PPLeeW9kxUDQIpUwx-V4JKKJGN8-l4Th4-40bdfVEXpd168gbCAiidYq6YSmlg2POM7umrCAtfcuvcGaoWbIfWOy_9IbYL8cZqJJW2g_BvfVKOGObCM',
     alt: 'Peinture intérieure'
   }
