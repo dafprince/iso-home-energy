@@ -1,155 +1,404 @@
-/* Titres premium */
-.section-title-premium {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 3rem;
+/* ========================================
+   SERVICE PAGE - ULTRA PREMIUM
+   ======================================== */
+
+/* ========== HERO SECTION ========== */
+.service-hero {
   text-align: center;
-  color: #1a1a1a;
-  margin-bottom: 0.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-8) 0;
+}
+
+.service-hero h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: var(--font-weight-black);
+  color: var(--noir-profond);
+  margin: var(--spacing-4) 0;
+  line-height: 1.2;
+}
+
+.service-hero p {
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.6;
+  color: var(--noir-profond);
+  margin-bottom: var(--spacing-6);
+  opacity: 0.9;
+}
+
+.service-hero-actions {
+  display: flex;
+  gap: var(--spacing-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ========== SECTION TITLES ========== */
+.section-title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: var(--font-weight-black);
+  color: var(--noir-profond);
+  text-align: center;
+  margin-bottom: var(--spacing-10);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--vert-principal);
+  border-radius: 2px;
+}
+
+.section-title-premium {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: var(--font-weight-black);
+  color: var(--noir-profond);
+  text-align: center;
+  margin-bottom: var(--spacing-3);
 }
 
 .section-subtitle-premium {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.15rem;
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--gris-fonce);
   text-align: center;
-  color: #444;
-  max-width: 720px;
-  margin: 0 auto 2.5rem;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-10);
+  line-height: 1.6;
 }
 
-/* Grille des services */
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+/* ========== SERVICES GRID (LISTE) ========== */
 .services-grid-premium {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-8);
 }
 
-/* Grille avantages */
+/* ========== AVANTAGES GRID ========== */
 .advantages-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-6);
 }
 
-/* Grille types */
-.types-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-}
-
-/* Informations chantier */
-.service-info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
-}
-
-/* Cartes avantages */
 .advantage-card {
-  padding: 20px;
-  border: 2px solid #8dc63f;
-  border-radius: 12px;
-  background-color: #f9fff2;
-  color: #222;
-  font-weight: 600;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+  padding: var(--spacing-6);
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 3px solid var(--vert-principal);
+  border-radius: var(--radius-2xl);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(141, 198, 63, 0.1);
+}
+
+.advantage-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(141, 198, 63, 0.2);
+  border-color: var(--noir-profond);
+}
+
+.advantage-icon {
+  font-size: 32px;
+  color: var(--vert-principal);
+  font-weight: var(--font-weight-black);
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 14px;
+  justify-content: center;
+  background: var(--blanc-pur);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--vert-principal);
 }
 
-/* Icone avantage */
-.advantage-icon {
+.advantage-card p {
+  font-size: 16px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--noir-profond);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========== TYPES GRID ========== */
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.type-card {
+  padding: var(--spacing-8);
+  background: var(--blanc-pur);
+  border: 3px solid var(--noir-profond);
+  border-radius: var(--radius-2xl);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.type-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--vert-principal);
+}
+
+.type-card h3 {
   font-size: 22px;
-  color: #8dc63f;
-  font-weight: 700;
+  font-weight: var(--font-weight-black);
+  color: var(--noir-profond);
+  margin-bottom: var(--spacing-3);
 }
 
-/* Style CTA */
+.type-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--gris-fonce);
+  margin: 0;
+}
+
+/* ========== SERVICE INFO GRID ========== */
+.service-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.service-info-card {
+  padding: var(--spacing-8);
+  background: var(--blanc-pur);
+  border: 3px solid var(--gris-border);
+  border-radius: var(--radius-2xl);
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.service-info-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--vert-principal);
+  box-shadow: 0 12px 30px rgba(141, 198, 63, 0.15);
+}
+
+.service-info-card h3 {
+  font-size: 20px;
+  font-weight: var(--font-weight-bold);
+  color: var(--noir-profond);
+  margin-bottom: var(--spacing-4);
+}
+
+.service-info-card p {
+  font-size: 16px;
+  color: var(--gris-fonce);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.aides-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  justify-content: center;
+}
+
+/* ========== CTA SECTION ========== */
 .service-cta {
   text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.service-cta h2 {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: var(--font-weight-black);
+  color: var(--noir-profond);
+  margin-bottom: var(--spacing-4);
+}
+
+.service-cta p {
+  font-size: clamp(16px, 2vw, 18px);
+  color: var(--noir-profond);
+  margin-bottom: var(--spacing-6);
+  opacity: 0.9;
 }
 
 .service-cta-actions {
-  margin-top: 12px;
   display: flex;
+  gap: var(--spacing-4);
   justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap;
 }
 
-/* Style général pour bouton dans CTA */
-.service-cta button {
-  min-width: 220px;
+.service-cta-actions button,
+.service-cta-actions a button {
+  min-width: 240px;
 }
 
-/* Style des cards (version premium) */
-.service-card.premium {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(141, 198, 63, 0.15);
+/* ========== SERVICE CARD PREMIUM ========== */
+.service-card {
+  background: var(--blanc-pur);
+  border: 4px solid var(--noir-profond);
+  border-radius: var(--radius-3xl);
   overflow: hidden;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 4px 10px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   cursor: pointer;
 }
 
-.service-card.premium:hover {
-  box-shadow: 0 12px 36px rgba(141, 198, 63, 0.3);
+.service-card:hover {
   transform: translateY(-8px);
+  box-shadow: 
+    0 20px 60px rgba(141, 198, 63, 0.2),
+    0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: var(--vert-principal);
 }
 
 .service-card-image {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
-  filter: brightness(0.95);
-  transition: filter 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
-.service-card.premium:hover .service-card-image {
-  filter: brightness(1);
+.service-card:hover .service-card-image {
+  transform: scale(1.05);
 }
 
 .service-card-content {
-  padding: 24px 20px;
+  padding: var(--spacing-6);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-4);
 }
 
 .service-card-title {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 1.25rem;
-  margin-bottom: 12px;
-  color: #0b4615;
+  font-size: 24px;
+  font-weight: var(--font-weight-black);
+  color: var(--noir-profond);
+  margin: 0;
 }
 
 .service-card-description {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1rem;
-  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--gris-fonce);
   flex-grow: 1;
-  margin-bottom: 16px;
+  margin: 0;
 }
 
 .service-card-button {
-  background: linear-gradient(135deg, #8dc63f 0%, #6fa32e 100%);
-  color: black;
-  padding: 10px 24px;
-  border-radius: 8px;
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  background: var(--vert-principal);
+  color: var(--noir-profond);
+  font-size: 15px;
+  font-weight: var(--font-weight-black);
   text-transform: uppercase;
-  border: none;
+  letter-spacing: 0.5px;
+  border: 3px solid var(--noir-profond);
+  border-radius: var(--radius-xl);
   cursor: pointer;
-  transition: background 0.3s ease;
-  align-self: flex-start;
   text-decoration: none;
-  font-size: 14px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
 }
 
 .service-card-button:hover {
-  background: linear-gradient(135deg, #a2d965 0%, #8dc63f 100%);
+  background: var(--vert-hover);
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(141, 198, 63, 0.3);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .services-grid-premium {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-6);
+  }
+
+  .advantages-grid,
+  .types-grid,
+  .service-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-hero-actions,
+  .service-cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-hero-actions button,
+  .service-cta-actions button {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .services-grid-premium {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title::after {
+    width: 60px;
+    height: 3px;
+    bottom: -10px;
+  }
+
+  .advantage-card {
+    padding: var(--spacing-5);
+  }
+
+  .advantage-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+  }
+
+  .type-card,
+  .service-info-card {
+    padding: var(--spacing-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card-image {
+    height: 180px;
+  }
+
+  .service-card-content {
+    padding: var(--spacing-5);
+  }
+
+  .service-card-title {
+    font-size: 20px;
+  }
+
+  .service-card-description {
+    font-size: 14px;
+  }
+
+  .service-card-button {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
 }

@@ -57,8 +57,8 @@ export const SERVICES_IMAGES = {
   },
   
   peinture: {
-    main: 'https://lh3.googleusercontent.com/proxy/T5iIhJ84PPLeeW9kxUDQIpUwx-V4JKKJGN8-l4Th4-40bdfVEXpd168gbCAiidYq6YSmlg2POM7umrCAtfcuvcGaoWbIfWOy_9IbYL8cZqJJW2g_BvfVKOGObCM',
-    thumb: 'https://lh3.googleusercontent.com/proxy/T5iIhJ84PPLeeW9kxUDQIpUwx-V4JKKJGN8-l4Th4-40bdfVEXpd168gbCAiidYq6YSmlg2POM7umrCAtfcuvcGaoWbIfWOy_9IbYL8cZqJJW2g_BvfVKOGObCM',
+    main: 'https://www.entreprisepeinturedeco.fr/wp-content/uploads/2018/03/Peintre-pour-travaux-de-peinture-interieur-et-exterieur-en-Essonne-91.jpg',
+    thumb: 'https://www.entreprisepeinturedeco.fr/wp-content/uploads/2018/03/Peintre-pour-travaux-de-peinture-interieur-et-exterieur-en-Essonne-91.jpg',
     alt: 'Peinture intérieure'
   }
 };
