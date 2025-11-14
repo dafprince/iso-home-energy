@@ -27,7 +27,8 @@ export { default as ServiceCard } from './sections/Services/ServiceCard';
 export { default as TestimonialCard } from './sections/Testimonials/TestimonialCard';
 export { default as ProcessStep } from './sections/Process/ProcessStep';
 export { default as FAQItem } from './sections/FAQ/FAQItem';
-
+// Calculateur
+export { default as Calculator } from './Calculator/Calculator';
 
 // UI components
 export { default as Modal } from './ui/Modal/Modal';

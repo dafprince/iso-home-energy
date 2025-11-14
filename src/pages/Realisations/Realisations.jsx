@@ -2,22 +2,36 @@
    RÉALISATIONS PAGE - ULTRA PREMIUM
    ======================================== */
 
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Badge, Button, Section, Container } from '../../components';
-import { REALISATIONS } from '../../data/images';
+import { useState, useEffect } from 'react';
+import { Badge, Section, Container } from '../../components';
+import RealisationCard from '../../components/features/RealisationCard';
+import { 
+  realisationsData, 
+  categories, 
+  getRealisationsByCategory,
+  getCountByCategory 
+} from '../../data/realisations';
 import './Realisations.css';
 
 const Realisations = () => {
-  const [filter, setFilter] = useState('all');
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [filteredRealisations, setFilteredRealisations] = useState(realisationsData);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const filteredRealisations = filter === 'all' 
-    ? REALISATIONS 
-    : REALISATIONS.filter(r => r.service === filter);
+  const handleCategoryChange = (categoryId) => {
+    setIsAnimating(true);
+    setActiveCategory(categoryId);
+    
+    setTimeout(() => {
+      const filtered = getRealisationsByCategory(categoryId);
+      setFilteredRealisations(filtered);
+      setIsAnimating(false);
+    }, 300);
+  };
 
   return (
     <div className="realisations-page">
@@ -25,94 +39,83 @@ const Realisations = () => {
       <Section background="green" padding="large">
         <Container>
           <div className="realisations-hero">
-            <Badge variant="secondary" size="large">Nos Réalisations</Badge>
-            <h1>Portfolio Avant / Après</h1>
-            <p>Découvrez quelques-unes de nos plus belles transformations réalisées dans les Vosges et le Grand Est.</p>
+            <Badge variant="secondary" size="large">
+              🏆 Nos Réalisations
+            </Badge>
+            <h1>Plus de 500 Projets Réalisés</h1>
+            <p>
+              Découvrez nos chantiers avant/après et laissez-vous inspirer pour votre projet 
+              de rénovation énergétique.
+            </p>
           </div>
         </Container>
       </Section>
 
-      {/* FILTRES */}
+      {/* FILTERS */}
       <Section background="white" padding="medium">
         <Container>
           <div className="realisations-filters">
-            <button 
-              className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
-              onClick={() => setFilter('all')}
-            >
-              Tous les projets
-            </button>
-            <button 
-              className={`filter-btn ${filter === 'isolation' ? 'active' : ''}`}
-              onClick={() => setFilter('isolation')}
-            >
-              🏠 Isolation
-            </button>
-            <button 
-              className={`filter-btn ${filter === 'facade' ? 'active' : ''}`}
-              onClick={() => setFilter('facade')}
-            >
-              🏗️ Façade
-            </button>
-            <button 
-              className={`filter-btn ${filter === 'menuiserie' ? 'active' : ''}`}
-              onClick={() => setFilter('menuiserie')}
-            >
-              🪟 Menuiserie
-            </button>
+            {categories.map(category => {
+              const count = getCountByCategory(category.id);
+              return (
+                <button
+                  key={category.id}
+                  className={`filter-button ${activeCategory === category.id ? 'active' : ''}`}
+                  onClick={() => handleCategoryChange(category.id)}
+                >
+                  <span className="filter-icon">{category.icon}</span>
+                  <span className="filter-name">{category.name}</span>
+                  <span className="filter-count">{count}</span>
+                </button>
+              );
+            })}
           </div>
         </Container>
       </Section>
 
-      {/* GRILLE RÉALISATIONS */}
+      {/* GRID */}
       <Section background="gray" padding="large">
         <Container>
-          <div className="realisations-grid">
-            {filteredRealisations.map((realisation) => (
-              <div key={realisation.id} className="realisation-card">
-                <div className="realisation-images">
-                  <div className="realisation-image avant">
-                    <img src={realisation.avant} alt={`${realisation.titre} - Avant`} />
-                    <span className="realisation-label">Avant</span>
-                  </div>
-                  <div className="realisation-divider">
-                    <span className="realisation-arrow">→</span>
-                  </div>
-                  <div className="realisation-image apres">
-                    <img src={realisation.apres} alt={`${realisation.titre} - Après`} />
-                    <span className="realisation-label apres-label">Après</span>
-                  </div>
-                </div>
-                <div className="realisation-info">
-                  <h3>{realisation.titre}</h3>
-                  <Badge variant="primary">{realisation.service}</Badge>
-                </div>
-              </div>
+          {/* COUNTER */}
+          <div className="realisations-counter">
+            <p>
+              <strong>{filteredRealisations.length}</strong> réalisation{filteredRealisations.length > 1 ? 's' : ''} 
+              {activeCategory !== 'all' && ` en ${categories.find(c => c.id === activeCategory)?.name}`}
+            </p>
+          </div>
+
+          {/* GRID */}
+          <div className={`realisations-grid ${isAnimating ? 'animating' : ''}`}>
+            {filteredRealisations.map(realisation => (
+              <RealisationCard 
+                key={realisation.id} 
+                realisation={realisation}
+              />
             ))}
           </div>
 
+          {/* EMPTY STATE */}
           {filteredRealisations.length === 0 && (
             <div className="realisations-empty">
-              <p>Aucune réalisation dans cette catégorie pour le moment.</p>
+              <div className="empty-icon">🔍</div>
+              <h3>Aucune réalisation trouvée</h3>
+              <p>Essayez un autre filtre</p>
             </div>
           )}
         </Container>
       </Section>
 
       {/* CTA */}
-      <Section background="green" padding="medium">
+      <Section background="black" padding="large">
         <Container>
           <div className="realisations-cta">
-            <h2>Votre Projet Sera Le Prochain !</h2>
-            <p>Contactez-nous pour transformer votre logement.</p>
-            <div className="realisations-cta-actions">
-              <Link to="/eligibilite">
-                <Button variant="secondary" size="large">Tester mon éligibilité</Button>
-              </Link>
-              <Link to="/contact">
-                <Button variant="outline" size="large">Demander un devis</Button>
-              </Link>
-            </div>
+            <h2>Votre Projet en Tête ?</h2>
+            <p>
+              Contactez-nous pour un devis gratuit et personnalisé
+            </p>
+            <a href="/contact" className="cta-button">
+              Demander un devis
+            </a>
           </div>
         </Container>
       </Section>

@@ -13,8 +13,10 @@ import {
   FAQItem,
   Badge,
   Section,
-  Container 
+  Container,
+  Calculator
 } from '../../components';
+
 import { servicesData, getFeaturedServices } from '../../data/services';
 import { getFeaturedTestimonials } from '../../data/testimonials';
 import { processSteps } from '../../data/processSteps';
@@ -144,27 +146,8 @@ const Home = () => {
         </Container>
       </Section>
 
-      {/* ELIGIBILITY BANNER */}
-      <Section background="green" padding="medium">
-        <Container>
-          <div className="eligibility-banner">
-            <div className="eligibility-banner-content">
-              <h2 className="eligibility-banner-title">
-                Jusqu'à 100% de Financement pour Vos Travaux
-              </h2>
-              <p className="eligibility-banner-text">
-                Testez votre éligibilité en 2 minutes et découvrez le montant des aides 
-                auxquelles vous avez droit : MaPrimeRénov', CEE, Éco-PTZ...
-              </p>
-            </div>
-            <Link to="/eligibilite">
-              <Button variant="secondary" size="large">
-                Calculer mes aides
-              </Button>
-            </Link>
-          </div>
-        </Container>
-      </Section>
+      {/* CALCULATEUR SECTION - REMPLACE LA SECTION ELIGIBILITY BANNER */}
+      <Calculator />
 
       {/* TESTIMONIALS SECTION */}
       <Section background="white" padding="large" id="temoignages">
