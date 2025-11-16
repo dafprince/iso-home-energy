@@ -19,7 +19,16 @@ import APropos from './pages/APropos/APropos';
 import Realisations from './pages/Realisations/Realisations';
 import Aides from './pages/Aides/Aides';
 import NotFound from './pages/NotFound/NotFound';
-
+import Estimation from './pages/Estimation/Estimation';
+//==============================
+import './styles/variables.css';
+import './styles/reset.css';
+import './styles/typography.css';
+import './styles/utilities.css';
+import './styles/responsive.css';
+import './styles/animations.css';
+import './styles/mobile.css';  // ⬅️ AJOUTER CETTE LIGNE À LA FIN !
+import './App.css';
 import './App.css';
 
 // Composant pour gérer le loading lors des changements de route
@@ -58,6 +67,7 @@ const AppContent = () => {
           <Route path="/eligibilite" element={<Eligibilite />} />
           <Route path="/services/:slug" element={<ServicePage />} />
           <Route path="/services" element={<ServicePage />} />
+          <Route path="/estimation" element={<Estimation />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

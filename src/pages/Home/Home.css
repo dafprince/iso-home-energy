@@ -285,6 +285,543 @@
   flex-wrap: wrap;
 }
 
+/* ========================================
+   BOUTON ESTIMATION ANIMÉ
+   ======================================== */
+
+.btn-estimate {
+  position: relative;
+  overflow: hidden;
+  animation: pulseEstimate 2s ease-in-out infinite;
+}
+
+@keyframes pulseEstimate {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(141, 198, 63, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(141, 198, 63, 0);
+  }
+}
+
+.btn-estimate::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-estimate:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-estimate:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-actions {
+    gap: 12px !important;
+  }
+  
+  .btn-estimate {
+    animation: pulseMobile 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulseMobile {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(141, 198, 63, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(141, 198, 63, 0);
+    }
+  }
+}
+/* ========================================
+   ANIMATIONS ULTRA VISIBLES - HERO HOME
+   ======================================== */
+
+/* ========== HERO SECTION AVEC VAGUES TRÈS VISIBLES ========== */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fff0 100%);
+}
+
+/* Première vague TRÈS visible */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(141, 198, 63, 0.15) 15%,
+    rgba(141, 198, 63, 0.25) 35%,
+    rgba(141, 198, 63, 0.35) 50%,
+    rgba(141, 198, 63, 0.25) 65%,
+    rgba(141, 198, 63, 0.15) 85%,
+    transparent 100%
+  );
+  animation: waveTraverseHero 8s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(20px);
+}
+
+@keyframes waveTraverseHero {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+/* Deuxième vague en sens inverse TRÈS visible */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.2) 80%,
+    transparent 100%
+  );
+  animation: waveTraverseHero 12s linear infinite reverse;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(15px);
+}
+
+/* Contenu au-dessus */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ========== BADGE AVEC ILLUMINATION TRÈS FORTE ========== */
+.hero-content .badge {
+  background: linear-gradient(135deg, #8dc63f 0%, #b8e66d 100%);
+  box-shadow: 
+    0 8px 24px rgba(141, 198, 63, 0.5),
+    0 4px 12px rgba(141, 198, 63, 0.3),
+    0 0 40px rgba(141, 198, 63, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.5),
+    inset 0 -2px 8px rgba(0, 0, 0, 0.2);
+  animation: badgeMegaPulse 2s ease-in-out infinite;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transform-origin: center;
+}
+
+@keyframes badgeMegaPulse {
+  0%, 100% {
+    box-shadow: 
+      0 8px 24px rgba(141, 198, 63, 0.5),
+      0 4px 12px rgba(141, 198, 63, 0.3),
+      0 0 40px rgba(141, 198, 63, 0.4),
+      inset 0 2px 4px rgba(255, 255, 255, 0.5);
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    box-shadow: 
+      0 12px 40px rgba(141, 198, 63, 0.7),
+      0 8px 24px rgba(141, 198, 63, 0.5),
+      0 0 60px rgba(141, 198, 63, 0.6),
+      0 0 80px rgba(141, 198, 63, 0.3),
+      inset 0 2px 4px rgba(255, 255, 255, 0.7);
+    transform: translateY(-5px) scale(1.08);
+  }
+}
+
+/* ========== TITRE AVEC OMBRES ULTRA VISIBLES ========== */
+.hero-title {
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    0 16px 32px rgba(0, 0, 0, 0.25),
+    0 24px 48px rgba(0, 0, 0, 0.3);
+  animation: heroTitleMegaGlow 3s ease-in-out infinite;
+}
+
+@keyframes heroTitleMegaGlow {
+  0%, 100% {
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.1),
+      0 4px 8px rgba(0, 0, 0, 0.15),
+      0 8px 16px rgba(0, 0, 0, 0.2),
+      0 16px 32px rgba(0, 0, 0, 0.25),
+      0 24px 48px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    text-shadow: 
+      0 4px 8px rgba(0, 0, 0, 0.15),
+      0 8px 16px rgba(141, 198, 63, 0.3),
+      0 16px 32px rgba(141, 198, 63, 0.4),
+      0 24px 48px rgba(141, 198, 63, 0.3),
+      0 32px 64px rgba(141, 198, 63, 0.2),
+      0 0 80px rgba(141, 198, 63, 0.4);
+  }
+}
+
+/* Gradient text TRÈS animé */
+.text-gradient {
+  background: linear-gradient(135deg, 
+    #8dc63f 0%, 
+    #6fa32e 25%, 
+    #8dc63f 50%, 
+    #b8e66d 75%, 
+    #8dc63f 100%
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMegaShift 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(141, 198, 63, 0.3));
+}
+
+@keyframes gradientMegaShift {
+  0%, 100% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 20px rgba(141, 198, 63, 0.3));
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 40px rgba(141, 198, 63, 0.6));
+  }
+}
+
+/* ========== DESCRIPTION VISIBLE ========== */
+.hero-description {
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.12);
+  animation: descriptionMegaFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes descriptionMegaFloat {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-5px);
+    opacity: 0.9;
+  }
+}
+
+/* ========== BOUTONS ULTRA VISIBLES ========== */
+.hero-actions {
+  position: relative;
+  z-index: 3;
+}
+
+/* Bouton primaire MEGA illumination */
+.hero-actions > a:nth-child(1) button,
+.hero-actions > a:first-child button {
+  box-shadow: 
+    0 8px 24px rgba(141, 198, 63, 0.5),
+    0 4px 12px rgba(141, 198, 63, 0.3),
+    0 0 40px rgba(141, 198, 63, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 8px rgba(0, 0, 0, 0.15);
+  animation: primaryMegaGlow 2s ease-in-out infinite;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes primaryMegaGlow {
+  0%, 100% {
+    box-shadow: 
+      0 8px 24px rgba(141, 198, 63, 0.5),
+      0 4px 12px rgba(141, 198, 63, 0.3),
+      0 0 40px rgba(141, 198, 63, 0.3),
+      inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    transform: translateY(0);
+  }
+  50% {
+    box-shadow: 
+      0 12px 40px rgba(141, 198, 63, 0.7),
+      0 8px 24px rgba(141, 198, 63, 0.5),
+      0 0 60px rgba(141, 198, 63, 0.5),
+      0 0 80px rgba(141, 198, 63, 0.3),
+      inset 0 2px 4px rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+  }
+}
+
+.hero-actions > a:nth-child(1) button:hover {
+  transform: translateY(-8px) scale(1.08) !important;
+  box-shadow: 
+    0 16px 50px rgba(141, 198, 63, 0.8),
+    0 10px 30px rgba(141, 198, 63, 0.6),
+    0 0 80px rgba(141, 198, 63, 0.6),
+    0 0 100px rgba(141, 198, 63, 0.4) !important;
+}
+
+/* Bouton estimation MEGA pulse visible */
+.btn-estimate {
+  position: relative;
+  overflow: visible !important;
+  box-shadow: 
+    0 8px 24px rgba(141, 198, 63, 0.4),
+    0 4px 12px rgba(141, 198, 63, 0.3),
+    0 0 40px rgba(141, 198, 63, 0.2),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  animation: estimateMegaPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes estimateMegaPulse {
+  0%, 100% {
+    box-shadow: 
+      0 8px 24px rgba(141, 198, 63, 0.4),
+      0 4px 12px rgba(141, 198, 63, 0.3),
+      0 0 40px rgba(141, 198, 63, 0.2);
+  }
+  50% {
+    box-shadow: 
+      0 0 0 12px rgba(141, 198, 63, 0.2),
+      0 0 0 24px rgba(141, 198, 63, 0.1),
+      0 0 0 36px rgba(141, 198, 63, 0.05),
+      0 12px 40px rgba(141, 198, 63, 0.6),
+      0 6px 20px rgba(141, 198, 63, 0.4),
+      0 0 60px rgba(141, 198, 63, 0.4);
+    transform: scale(1.05);
+  }
+}
+
+/* Onde TRÈS visible autour du bouton */
+.btn-estimate::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle, 
+    rgba(141, 198, 63, 0.6) 0%, 
+    rgba(141, 198, 63, 0.3) 30%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: megaRipple 1.5s ease-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes megaRipple {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  100% {
+    width: 250%;
+    height: 250%;
+    opacity: 0;
+  }
+}
+
+/* Lueur interne TRÈS visible */
+.btn-estimate::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.6), 
+    transparent
+  );
+  transition: left 0.6s;
+  z-index: 1;
+}
+
+.btn-estimate:hover::after {
+  left: 100%;
+}
+
+/* ========== STATS MEGA VISIBLES ========== */
+.hero-stats {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-stat {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(141, 198, 63, 0.3);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-4);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    0 8px 24px rgba(0, 0, 0, 0.15),
+    0 0 30px rgba(141, 198, 63, 0.2),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero-stat:hover {
+  transform: translateY(-8px) scale(1.1);
+  box-shadow: 
+    0 8px 24px rgba(141, 198, 63, 0.3),
+    0 12px 40px rgba(141, 198, 63, 0.4),
+    0 0 60px rgba(141, 198, 63, 0.4),
+    0 0 80px rgba(141, 198, 63, 0.2),
+    inset 0 2px 4px rgba(255, 255, 255, 0.5);
+  background: rgba(141, 198, 63, 0.2);
+  border-color: rgba(141, 198, 63, 0.6);
+}
+
+.hero-stat-value {
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.15),
+    0 4px 8px rgba(141, 198, 63, 0.3),
+    0 0 20px rgba(141, 198, 63, 0.2);
+  animation: statMegaGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes statMegaGlow {
+  0%, 100% {
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.15),
+      0 4px 8px rgba(141, 198, 63, 0.3),
+      0 0 20px rgba(141, 198, 63, 0.2);
+  }
+  50% {
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.2),
+      0 4px 8px rgba(141, 198, 63, 0.5),
+      0 8px 16px rgba(141, 198, 63, 0.4),
+      0 0 40px rgba(141, 198, 63, 0.4);
+  }
+}
+
+/* Animation MEGA visible pour chaque stat */
+.hero-stat:nth-child(1) {
+  animation: statMegaFloat 2.5s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.hero-stat:nth-child(2) {
+  animation: statMegaFloat 2.5s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.hero-stat:nth-child(3) {
+  animation: statMegaFloat 2.5s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+.hero-stat:nth-child(4) {
+  animation: statMegaFloat 2.5s ease-in-out infinite;
+  animation-delay: 0.9s;
+}
+
+@keyframes statMegaFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ========== PARTICULES MEGA VISIBLES ========== */
+.hero-content::before,
+.hero-content::after {
+  content: '✨';
+  position: absolute;
+  font-size: 36px;
+  opacity: 0;
+  pointer-events: none;
+  animation: particleMegaFloat 6s ease-in-out infinite;
+  z-index: 0;
+  filter: drop-shadow(0 0 10px rgba(141, 198, 63, 0.6));
+}
+
+.hero-content::before {
+  left: 10%;
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.hero-content::after {
+  right: 10%;
+  top: 30%;
+  animation-delay: 3s;
+}
+
+@keyframes particleMegaFloat {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-80px) rotate(180deg) scale(1.5);
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-160px) rotate(360deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .hero-section::before,
+  .hero-section::after {
+    opacity: 0.8;
+  }
+  
+  .hero-content::before,
+  .hero-content::after {
+    font-size: 28px;
+  }
+}
+
+/* ========== ACCESSIBILITÉ ========== */
+@media (prefers-reduced-motion: reduce) {
+  .hero-section::before,
+  .hero-section::after,
+  .hero-title,
+  .hero-stat,
+  .hero-actions button,
+  .hero-content::before,
+  .hero-content::after {
+    animation: none !important;
+  }
+}
 /* ========== RESPONSIVE ========== */
 
 @media (max-width: 1024px) {
@@ -320,4 +857,24 @@
   .process-grid::before {
     display: none;
   }
+}
+/* ========================================
+   FIX DÉBORDEMENT SECTION AVANT FOOTER
+   ======================================== */
+
+/* Dernière section de la page */
+.home-page > section:last-of-type {
+  margin-bottom: 0 !important;
+  padding-bottom: 60px !important;
+}
+
+/* Section avec background noir */
+.home-page section[style*="background"] {
+  margin-bottom: 0 !important;
+}
+
+/* Assurer qu'il n'y a pas d'espace blanc */
+.home-page {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }

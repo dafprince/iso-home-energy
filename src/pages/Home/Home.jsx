@@ -65,6 +65,11 @@ const Home = () => {
                   🎯 Tester mon éligibilité
                 </Button>
               </Link>
+              <Link to="/estimation">
+                <Button variant="secondary" size="large" className="btn-estimate">
+                  💰 Obtenir mon estimation
+                </Button>
+              </Link>
               <a href={`tel:${CONTACT.phones.primary.replace(/\s/g, '')}`}>
                 <Button variant="outline" size="large">
                   📞 {CONTACT.phones.primary}
